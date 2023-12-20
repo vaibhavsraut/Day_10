@@ -98,4 +98,34 @@ public class AddressBook {
         }
     }
 
+    public void addMultipleContacts() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of contacts to add: ");
+        int numContacts = scanner.nextInt();
+
+        for (int i = 0; i < numContacts; i++) {
+            System.out.println("Enter details for contact #" + (i + 1) + ":");
+            System.out.print("First Name: ");
+            String firstName = scanner.next();
+            System.out.print("Last Name: ");
+            String lastName = scanner.next();
+            System.out.print("Address: ");
+            String address = scanner.next();
+            System.out.print("City: ");
+            String city = scanner.next();
+            System.out.print("State: ");
+            String state = scanner.next();
+            System.out.print("Zip: ");
+            String zip = scanner.next();
+            System.out.print("Phone Number: ");
+            String phoneNumber = scanner.next();
+            System.out.print("Email: ");
+            String email = scanner.next();
+
+            Contact newContact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+            addContact(newContact);
+        }
+        System.out.println("Contacts added successfully");
+    }
+
 }
