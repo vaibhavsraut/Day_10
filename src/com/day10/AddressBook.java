@@ -82,4 +82,20 @@ public class AddressBook {
         }
     }
 
+    public void deleteContact(String firstName) {
+        int indexToRemove = -1;
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getFirstName().equals(firstName)) {
+                indexToRemove = i;
+                break;
+            }
+        }
+        if (indexToRemove != -1) {
+            contacts.remove(indexToRemove);
+            System.out.println("Contact deleted successfully");
+        } else {
+            System.out.println("Contact not found");
+        }
+    }
+
 }
